@@ -1,0 +1,41 @@
+[33mcommit 8d55c3509da55c421a00047252231b46857f48ba[m[33m ([m[1;36mHEAD -> [m[1;32mp1[m[33m, [m[1;32mstory1[m[33m)[m
+Author: Sim-Chen <chenzhendoit@163.com>
+Date:   Wed Dec 4 00:14:55 2019 -0800
+
+    add devise module so that user can login logout
+
+[33mcommit fbfe98c342234e3b639cd2aa508071d2ec1ff715[m
+Author: Sim-Chen <chenzhendoit@163.com>
+Date:   Tue Dec 3 23:26:38 2019 -0800
+
+    fix bootstrap flash bug
+
+[33mcommit ead06276e4c79cba2775fe454e2a42d1089eb2b7[m
+Author: Sim-Chen <chenzhendoit@163.com>
+Date:   Tue Dec 3 23:07:17 2019 -0800
+
+    add bootstrap flash
+
+[33mcommit 7a91e678cc63b9483af6b3f43447a46e229da641[m
+Author: Sim-Chen <chenzhendoit@163.com>
+Date:   Tue Dec 3 23:02:21 2019 -0800
+
+    fix application bug :sysnax error
+
+[33mcommit ad483a56dfc82a3aafbdc9324f338d72fabb3e9a[m
+Author: Sim-Chen <chenzhendoit@163.com>
+Date:   Tue Dec 3 22:50:46 2019 -0800
+
+    add bootstrap html and fix sqlit3 version
+
+[33mcommit e53b9b6dd4d28e1cb6d9f8178344ca105070b2e8[m
+Author: Sim-Chen <chenzhendoit@163.com>
+Date:   Tue Dec 3 22:24:11 2019 -0800
+
+    add bootstrap to project
+
+[33mcommit ba80843ba2ba320341d853b2a1a96e72a5a2ad38[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Sim-Chen <chenzhendoit@163.com>
+Date:   Tue Dec 3 19:32:49 2019 -0800
+
+    frist commit
