@@ -1,48 +1,71 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
+<div class="row">
+  <div class="col-md-12">
+    <% if current_page?('/') %>
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+    <% else %>
+      <div class="navbar navbar-default navbar-fixed-top show_bgcolor" role="navigation">
+    <% end %>
+      <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">GMall </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--=== logo ===-->
+          <%= link_to root_path, class: "navbar-brand logo-box scroll" do %>
+            <%= image_tag("ucas.png") %><%= 'GMall' %>
+          <% end %>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-            <li calss="active">
-              <%= link_to("Products",products_path)%>
-            </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
+        <div class="collapse navbar-collapse top-nav" id="menu-4">
+          <!--===  ===-->
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to('商品', products_path) %></li>
+            <!-- <li><%= link_to(t('brand-access'), '#', class: "scroll") %></li>
+            <li><%= link_to(t('recommend-access'), '#', class: "scroll") %></li> -->
+          </ul>
+          <!--===  ===-->
+          <ul class='nav navbar-nav  navbar-right'>
+            <li class="divider" role="separator"></li>
+      
+            <!-- 购物车 -->
             <li>
-              <%= link_to carts_path do  %>
-                 购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+              <%= link_to carts_path do %>
+                <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
               <% end %>
             </li>
-             <% if !current_user %>
-                  <li><%= link_to("注册", new_user_registration_path) %> </li>
-                  <li><%= link_to(content_tag(:i,'登陆',class:'fa  fa-sign-out'),new_user_session_path)%></li>
-                <% else %>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                       <% if current_user.admin?%>
-                       <li>
-                        <%= link_to("管理员",admin_products_path)%>
-                        </li>
-                        <% end %>
-                        <li><%= link_to(content_tag(:i,'退出',class:'fa fa-sign-out'),destroy_user_session_path,method: :delete)%></li>
-                    </ul>
-                  </li>
-                <% end %>
-                <li>
-                  <%= link_to("个人订单列表", account_orders_path ) %>
-                </li>
-            </ul>
+           
+            <% if !current_user %>
+              <!-- 注册登陆 -->
+              <li><%= link_to('注册', new_user_registration_path) %> </li>
+              <li><%= link_to('登录', new_user_session_path) %></li>
+            <% else %>
+              <!-- 使用者下拉式選單 -->
+              <li class='dropdown'>
+                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+                  <%= current_user.email %>
+                  <b class='caret'></b>
+                </a>
+                <!-- 下拉選單 -->
+                <ul class='dropdown-menu'>
+                  <!-- admin 後台 -->
+                  <% if current_user.admin? %>
+                    <li> <%= link_to('管理员', admin_products_path) %> </li>
+                    <li class="divider"> </li>
+                  <% end %>
+                  <!-- user 選項 -->
+                  <li> <%= link_to('个人账户', account_orders_path) %> </li>
+                  <li> <%= link_to('用户订单', account_orders_path) %> </li>
+                  <li class="divider"> </li>
+                  <li> <%= link_to('退出', destroy_user_session_path, method: :delete) %> </li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+          <!-- 搜索欄 -->
         </div>
-        <!-- /.navbar-collapse -->
+      </div>
     </div>
-    <!-- /.container-fluid -->
-</nav>
+  </div>
+</div>

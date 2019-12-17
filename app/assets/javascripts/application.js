@@ -16,3 +16,12 @@
 //= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require_tree .
+
+
+$(document).on('scroll', function () {
+    /*===== Welcome#index - 首页导航栏变化 =====*/
+      if ($(this).scrollTop() > 125) {
+          $('#navbar').addClass('show_bgcolor')
+      } else {
+          $('#navbar').removeClass('show_bgcolor')
+      }
